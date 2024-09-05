@@ -2,37 +2,71 @@ name: MoBrix-ui CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
-  build:
+  install-dependencies:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [16.x, 17.x, 18.x]
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build
- 
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - uses: actions/cache/restore@v4
+        id: check-cache
+        with:
+          lookup-only: true
+          path: node_modules
+          key: cache-${{ hashFiles('package-lock.json') }}-v${{ matrix.node-version }}
+      - if: ${{ steps.check-cache.outputs.cache-hit != 'true' }}
+        run: npm ci
+      - if: ${{ steps.check-cache.outputs.cache-hit != 'true' }}
+        uses: actions/cache/save@v4
+        id: cache
+        with:
+          path: node_modules
+          key: cache-${{ hashFiles('package-lock.json') }}-v${{ matrix.node-version }}
+  build:
+    needs: install-dependencies
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x, 17.x, 18.x]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - uses: actions/cache/restore@v4
+        id: cache
+        with:
+          path: node_modules
+          key: cache-${{ hashFiles('package-lock.json') }}-v${{ matrix.node-version }}
+      - run: npm run build
   unit-tests:
+    needs: install-dependencies
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [18.x]
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run test --verbose
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - uses: actions/cache/restore@v4
+        id: cache
+        with:
+          path: node_modules
+          key: cache-${{ hashFiles('package-lock.json') }}-v${{ matrix.node-version }}
+      - run: npm run test
