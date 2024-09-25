@@ -1,6 +1,5 @@
 # MoBrix-ui <img align="left" alt="" src="https://github.com/user-attachments/assets/6320466c-4270-4838-b949-51c78c8d0679" width="60px" />
 
-
 ![NPM](https://img.shields.io/npm/l/mobrix-ui?label=License&style=for-the-badge)
 ![npm (scoped)](https://img.shields.io/npm/v/mobrix-ui?color=orange%20&label=Latest%20version&style=for-the-badge&logo=npm)
 ![Maintenance](https://img.shields.io/maintenance/yes/2025?label=Maintained&style=for-the-badge)
