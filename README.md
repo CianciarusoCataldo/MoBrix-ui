@@ -1,8 +1,15 @@
-# MoBrix-ui
+# MoBrix-ui <img align="left" alt="" src="https://github.com/user-attachments/assets/6320466c-4270-4838-b949-51c78c8d0679" width="60px" />
+
 
 ![NPM](https://img.shields.io/npm/l/mobrix-ui?label=License&style=for-the-badge)
 ![npm (scoped)](https://img.shields.io/npm/v/mobrix-ui?color=orange%20&label=Latest%20version&style=for-the-badge&logo=npm)
 ![Maintenance](https://img.shields.io/maintenance/yes/2025?label=Maintained&style=for-the-badge)
+
+<br>
+
+<p align="center">
+<img alt="" src="https://github.com/user-attachments/assets/ebe89187-4d1e-4d67-844e-6ac0e5d8ad69" width="400px" />
+</p>
 
 <br>
 
@@ -40,7 +47,6 @@ Smart React components for every app, easily customizable for every purpose.
 - [MoBrix-ui philosophy](#mobrix-ui-philosophy)
 - [Components building process](#components-building-process)
   - [Shared Properties](#shared-properties)
-  - [Accessibility properties](#accessibility-properties)
   - [CSS variables](#css-variables)
   - [Reactive components](#reactive-components)
 - [Getting started](#getting-started)
