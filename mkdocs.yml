@@ -3,8 +3,8 @@ repo_url: https://github.com/CianciarusoCataldo/mobrix-ui
 site_author: Cataldo Cianciaruso
 copyright: 2024 Cataldo Cianciaruso
 theme:
-  icon:
-    repo: fontawesome/brands/github 
+  logo: "assets/mobtix-ui_icon.svg" 
+  favicon: "assets/mobtix-ui_icon.svg" 
   name: material
   features:
    - navigation.instant
