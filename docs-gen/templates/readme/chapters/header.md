@@ -14,7 +14,7 @@
 <br>
 
 <p align="center">
-<img alt="" src="https://github.com/user-attachments/assets/6320466c-4270-4838-b949-51c78c8d0679" width="300px" />
+<img alt="" src="https://cianciarusocataldo.github.io/mobrix-ui/logo512.png" width="300px" />
 </p>
 
 <br>
