@@ -15,7 +15,7 @@ export const DrawerLogoIcon = <img alt="" src={Logo} width={50} height={50} />;
 
 export const LogoIcon = (
   <img
-    className="w-12 h-12 short:w-8 short:h-8 xsm:w-16 xsm:h-16 3xl:w-20 3xl:h-20"
+    className="w-12 h-12"
     alt=""
     src={Logo}
   />
