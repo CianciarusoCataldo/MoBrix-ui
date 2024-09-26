@@ -1,6 +1,6 @@
 {
   "name": "mobrix-ui",
-  "version": "4.1.1",
+  "version": "4.2.0",
   "description": "Smart React components for every app, easily customizable for every purpose",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",

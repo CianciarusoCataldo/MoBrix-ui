@@ -2,6 +2,7 @@
 
 ## Versions
 
+- [4.2.0](#420)
 - [4.1.0](#410)
 - [4.0.0](#400)
 - [3.14.0](#3140)
@@ -30,6 +31,14 @@
 ---
 
 ## Changes
+
+<br>
+
+### 4.2.0
+
+- New MoBrix-ui logo
+- Optimizations
+- Clean-up
 
 <br>
 
